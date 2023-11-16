@@ -5,6 +5,7 @@ import OwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Skeleton from "../UI/Skeleton";
+import Countdown from "../UI/Countdown";
 
 const NewItems = () => {
 
@@ -101,20 +102,23 @@ useEffect(() => {
           :
           (<OwlCarousel {...owlCarouselModifier} >
           {items.map((item, index) => (
-            <div key={index}>
+            <div key={item.id}>
               <div className="nft__item">
                 <div className="author_list_pp">
                   <Link
                     to={`/author/${item.authorId}`}
                     data-bs-toggle="tooltip"
                     data-bs-placement="top"
-                    title="Creator: Monica Lucas"
+                    title={item.title}
                   >
                     <img className="lazy" src={item.authorImage} alt="" />
                     <i className="fa fa-check"></i>
                   </Link>
                 </div>
-                <div className="de_countdown">5h 30m 32s</div>
+               <Countdown
+               key={index}
+               expiryDate={item.expiryDate}
+               />
                 <div className="nft__item_wrap">
                   <div className="nft__item_extra">
                     <div className="nft__item_buttons">
