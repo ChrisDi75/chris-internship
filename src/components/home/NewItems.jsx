@@ -53,7 +53,8 @@ useEffect(() => {
           </div>
           {skeleton? (
             new Array(1).fill(0).map((index) => (
-              <OwlCarousel {...owlCarouselModifier}>
+              <OwlCarousel {...owlCarouselModifier}
+              key={index}>
                 <div key={index}>
                   <div className="nft__item">
                     <div className="author_list_pp">
