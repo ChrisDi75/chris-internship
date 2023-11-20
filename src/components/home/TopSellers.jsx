@@ -59,16 +59,16 @@ const TopSellers = () => {
                       <div className="author_list_pp">
                         <Link to="/author">
                           <Skeleton
-                            height={20}
-                            width={100}
+                            height={50}
+                            width={50}
                             borderRadius={"50%"}
                           />
                           <i className="fa fa-check"></i>
                         </Link>
                       </div>
                       <div className="author_list_info">
-                        <Skeleton width={100} />
-                        <Skeleton width={50} />
+                        <Skeleton width={100} height={20} />
+                        <Skeleton width={40} height={20}/>
                       </div>
                     </li>
                   ))
